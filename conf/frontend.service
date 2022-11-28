@@ -1,0 +1,13 @@
+[Unit]
+Description=Frontend
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/serve -l 3000 -s /home/pi/WiFi-Chameleon/web-interface/frontend/build
+Restart=always
+User=root
+WorkingDirectory=/home/pi/WiFi-Chameleon/web-interface/frontend/
+
+[Install]
+WantedBy=multi-user.target

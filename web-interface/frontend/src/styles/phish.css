@@ -1,0 +1,12 @@
+.phish-container {
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.phish-name {
+  color: green;
+}
+
+.phish-password {
+  color: red;
+}

@@ -1,0 +1,7 @@
+# no-resolv
+# no-poll
+no-hosts
+
+# Add domains which you want to force to an IP address here.
+$ADDRESS$
+listen-address=10.1.0.1, 0.0.0.0, 127.0.0.1

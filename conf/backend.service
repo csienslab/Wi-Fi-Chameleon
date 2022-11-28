@@ -1,0 +1,13 @@
+[Unit]
+Description=Backend
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /home/pi/WiFi-Chameleon/web-interface/backend/server.js
+Restart=always
+User=root
+WorkingDirectory=/home/pi/WiFi-Chameleon/web-interface/backend/
+
+[Install]
+WantedBy=multi-user.target

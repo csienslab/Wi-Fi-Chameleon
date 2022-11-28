@@ -1,0 +1,20 @@
+[Unit]
+Description=Strip relay daemon
+After=network.target
+
+[Service]
+Type=notify
+User=root
+Group=root
+RuntimeDirectory=gunicorn
+WorkingDirectory=/home/pi/WiFi-Chameleon/src/relay_server
+ExecStart=/usr/local/bin/gunicorn \
+  -c /home/pi/WiFi-Chameleon/src/gunicorn.py \
+  relay_server.strip_relay:app
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

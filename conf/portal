@@ -1,0 +1,14 @@
+# Config file for nginx
+
+server {
+    listen 80;
+    server_name portal.wifi-chameleon.edu;
+    access_log  /var/log/nginx/portal.log;
+    root /home/pi/WiFi-Chameleon/portal/;
+    index index.html;
+
+    $CONFIG$
+
+    location / {
+    }
+}

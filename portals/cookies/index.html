@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="banner">
+                <h1 id="header">Wi-Fi Chameleon</h1>
+                <object id="chameleon" data="chameleon.svg" type="image/svg+xml"></object>
+            </div>
+            <div id="results"></div>
+        </div>
+        <noscript>
+            Javascript is disabled, no test is performed...
+        </noscript>
+        <script>
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+    
+            function checkExistingCookie(){
+                const v = getCookie("testCookie");
+                return v === "test-cookie";
+            }
+    
+            function checkCookie(){
+                document.cookie = "testCookie=test-cookie";
+                return checkExistingCookie("testCookie");
+            }
+    
+            function runTests(){
+                document.getElementById("results").insertAdjacentHTML('beforeend', 
+                    "Previous cookie " + (checkExistingCookie() ? "<span style='color: green'>presented</span>" : "<span style='color: red'>not presented</span>") + ".<br />"
+                );
+                document.getElementById("results").insertAdjacentHTML('beforeend', 
+                    "Set Cookie " + (checkCookie() ? "<span style='color: green'>successfully</span>" : "<span style='color: red'>failed</span>") + ".<br />"
+                );
+            }
+            runTests();
+        </script>
+    </body>
+</html>

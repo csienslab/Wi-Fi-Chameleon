@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel=stylesheet type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="banner">
+                <h1 id="header">Wi-Fi Chameleon</h1>
+                <object id="chameleon" data="chameleon.svg" type="image/svg+xml"></object>
+            </div>
+            <div id="results"></div>
+        </div>
+        <noscript>
+            Javascript is disabled, no test is performed...
+        </noscript>
+        <script>
+    
+            function checkExistingLocalStorage(){
+                const v = localStorage.getItem('testLocalStorage');
+                console.log(v);
+                return v === "test-localstorage";
+            }
+    
+            function checkLocalStorage(){
+                localStorage.setItem('testLocalStorage', 'test-localstorage');
+                return checkExistingLocalStorage("testLocalStorage");
+            }
+    
+            function runTests(){
+                document.getElementById("results").insertAdjacentHTML('beforeend', 
+                    "Previous localStorage " + (checkExistingLocalStorage() ? "<span style='color: green'>presented</span>" : "<span style='color: red'>not presented</span>") + ".<br />"
+                );
+                document.getElementById("results").insertAdjacentHTML('beforeend', 
+                    "Set localStorage " + (checkLocalStorage() ? "<span style='color: green'>successfully</span>" : "<span style='color: red'>failed</span>") + ".<br />"
+                );
+            }
+            runTests();
+        </script>
+    </body>
+</html>

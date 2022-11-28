@@ -1,0 +1,12 @@
+#menu-div {
+  margin: 1rem;
+  margin-right: 0;
+  width: auto;
+}
+
+@media screen and (max-width: 500px) {
+  #menu-div {
+    margin: 1rem;
+    margin-bottom: 0;
+  }
+}

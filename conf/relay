@@ -1,0 +1,20 @@
+# Config file for nginx
+
+server {
+    listen 80;
+    server_name $ATTACKER_URL$.wifi-chameleon.edu.tw;
+    return 301 https://$ATTACKER_URL$.wifi-chameleon.edu.tw$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name $ATTACKER_URL$.wifi-chameleon.edu.tw;
+    access_log  /var/log/nginx/relay.log;
+
+    ssl_certificate /home/pi/WiFi-Chameleon/certificates/default/wifi-chameleon.crt;
+    ssl_certificate_key /home/pi/WiFi-Chameleon/certificates/default/wifi-chameleon.key;
+
+  location / {
+      proxy_pass http://unix:/run/relay.sock;
+  }
+}

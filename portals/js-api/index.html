@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="modernizr-build.js"></script>
+</head>
+<body>
+    <div id="feature-detection-result"></div>
+    <script>
+        const enabled_string = '<span style="color: #4D774E">true</span>'
+        const disabled_string = '<span style="color: #B73225">false</span>'
+
+        var features = Object.keys(Modernizr);
+        features = features.sort();
+
+        features.forEach(feature => {
+            if (typeof Modernizr[feature] === "boolean") {
+                if(!Modernizr[feature]){
+                    var element = document.createElement('p');
+                    element.innerHTML = feature + ' ' + disabled_string;
+                    document.getElementById('feature-detection-result').appendChild(element);
+                }
+                console.log(feature, Modernizr[feature]);
+            }
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.wifi-container {
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.wifi-list-title {
+  margin-bottom: 0 !important;
+  font-weight: normal !important;
+}
+
+.wifi-list {
+  margin-top: 0 !important;
+}
+
+.wifi-list-container {
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.wifi-attack-msg {
+  white-space: pre-line;
+  margin: 0 1rem !important;
+  margin-bottom: 0;
+  font-family: "Courier New";
+}
+
+.clickable {
+  cursor: pointer;
+}

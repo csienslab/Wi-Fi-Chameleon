@@ -1,0 +1,14 @@
+[Unit]
+Description=Mitm
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/WiFi-Chameleon/src/mitmproxy_daemon/main.py
+ExecStopPost=/usr/sbin/iptables -t nat -F PREROUTING
+Restart=always
+User=root
+WorkingDirectory=/home/pi/WiFi-Chameleon/src/mitmproxy_daemon/
+
+[Install]
+WantedBy=multi-user.target
