@@ -2,6 +2,11 @@
 
 Captive Portal attack and Captive Portal Browser measurement tool suite.
 
+For more details, please refer to our paper:
+> Ping-Lun Wang, Kai-Hsiang Chou, Shou-Ching Hsiao, Ann Tene Low, Tiffany Hyun-Jin Kim, and Hsu-Chun Hsiao 
+> "Capturing Antique Browsers in Modern Devices: A Security Analysis of Captive Portal Mini-Browsers."
+> ACNS, 2023.
+
 ## Install
 Python3 (version >=3.6) is required for this project.
 
